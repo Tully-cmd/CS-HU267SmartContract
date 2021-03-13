@@ -8,8 +8,10 @@ contract Solar
     
     
     uint costPerKWH; 
-    //billing based on kilowatt/hours as the system is based on batteries with capacity ~5-10 KWH and this makes it easier to see usage for the consumer - each consumer has one battery linked to producers in the system with something like a tesla supercharger. standard house voltage is 120 VAC, so the battery will have hookups rated at this. the idea here is that people are only getting power for what they need in an emergency - this isn't meant to link to an entire house like a generator system. this discourages wasteful use of electrcity as you are forced to actually plug stuff into the battery. it also helps to isolate the networked power system from a larger grid (maybe even The Grid) that we don't want to interface with at all
-    
+    //billing based kilowatt/hours as the system is based on batteries with capacity ~5-10 KWH and this makes it easier to see usage for the consumer - each consumer has one battery linked to producers 
+    //in the system with something like a tesla supercharger. standard house voltage is 120 VAC, so the battery will have hookups rated at this. the idea here is that people
+    //are only getting power for what they need in an emergency - this isn't meant to link to an entire house like a generator system. this discourages wasteful use of electrcity
+    //as you are forced to actually plug stuff into the battery. it also helps to isolate the networked power system from a larger grid (maybe even The Grid) that we don't want to interface with at all
     mapping (address => uint) private powerAvailable;
     mapping (address => uint) private activeConsumers;
     bool powerFlowing;
