@@ -7,7 +7,9 @@ contract Solar
     address seller;
     
     
-    uint costPerKWH; 
+    uint costPerKWH;
+    //uint  costPerKWH = 1; //HARDCODED for unit TESTING
+    
     //billing based kilowatt/hours as the system is based on batteries with capacity ~5-10 KWH and this makes it easier to see usage for the consumer - each consumer has one battery linked to producers 
     //in the system with something like a tesla supercharger. standard house voltage is 120 VAC, so the battery will have hookups rated at this. the idea here is that people
     //are only getting power for what they need in an emergency - this isn't meant to link to an entire house like a generator system. this discourages wasteful use of electrcity
@@ -16,7 +18,7 @@ contract Solar
     mapping (address => uint) private activeConsumers;
     bool powerFlowing;
     
-    constructor() public
+    constructor() public payable
     {
         seller = msg.sender;
         powerFlowing = false;
@@ -35,9 +37,16 @@ contract Solar
         
         costPerKWH = computePowerCost(powerAvailable[address(this)]);
         uint costToConsumer = amountKWH * costPerKWH;
+        
         require(msg.value >= costToConsumer * 1 ether, "Power cost must be affordable.");
+        //costToConsumer is always huge number so we get stuck here - FIXED see line 68
+        //require(msg.value >= 1 * 1 ether, "Power cost must be affordable."); //HARDCODED FOR TESTING
+        
         //consumer battery capacity is fixed and known to the consumer, allowing them to purchase fractional amounts of electricty to charge their battery
-        powerOn(amountKWH);
+        
+        //powerOn(amountKWH);
+        //powerOn method is infinite loop so I'm just setting powerFlowing to true here
+        powerFlowing = true;
     }
     
     
@@ -52,8 +61,9 @@ contract Solar
     
     function computePowerCost(uint capacityAvailable) private returns (uint)
     {
-        uint BASEFEE = getMarketRate();
-        uint cost = capacityAvailable * BASEFEE; //simplfied cost scaling model for the specific producer of electricity - encourages people to utilize power evely and not just from one producer
+        //uint BASEFEE = getMarketRate(); commenting this out solidity literally doesn't support floating point values no kidding probably best to divide by a whole number on the next line
+        
+        uint cost = capacityAvailable / 100; //simplfied cost scaling model for the specific producer of electricity - encourages people to utilize power evely and not just from one producer
         return cost;
     }
     
@@ -61,7 +71,8 @@ contract Solar
     {
         //set base power fee, in reality this would be set by street level network - incremented upward by some amount if street level network is < 50%, < 40% capacity,
         // < 30% capacity, etc. point here is to somehow maintain a reasonable price but one that makes people only use it for essential purposes
-        uint BASEFEE = 0.000070 ether;
+        //uint BASEFEE = 0.000070 ether; // returns a gigantic fee for some odd reason see line 67
+        uint BASEFEE = 1; //for testing returns a too big of fee
         return BASEFEE;
     }
     
@@ -73,6 +84,7 @@ contract Solar
         while(KWHdistributed <= amount)
         {
             powerFlowing = true;
+            //amount = amount - 1; This makes loop not infinite BUT the program runs too slow then eventually eats up our 3000000 gas limit
         }
     }
 }

@@ -6,7 +6,7 @@
     
     //CS-HU267
     
-        const contractName = 'Coal' // Change this for other contract
+        const contractName = 'Solar' // Change this for other contract
         const constructorArgs = []    // Put constructor args (if any) here for your contract
 
         // Note that the script needs the ABI which is generated from the compilation artifact.
