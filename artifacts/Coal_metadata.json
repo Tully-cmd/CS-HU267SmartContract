@@ -1,0 +1,84 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "currentPower",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "min",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getEmergencyPower",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "sendExtraCoal",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Idea on how a emergency power system could work",
+			"kind": "dev",
+			"methods": {},
+			"title": "Coal",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/Coal.sol": "Coal"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/Coal.sol": {
+			"keccak256": "0x0e9483aa34cdad4684d9b16bb684b094e553a7794ca5dbb58406cd4917fa1e58",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://751a77c2579b2e56b097b11d334d2c58484ed862ef9dc9e268b6021ba0dc324e",
+				"dweb:/ipfs/QmbDGQSKF1MweRP3mTimmfQLj7LhH1UJsVaV4HFB7stMmX"
+			]
+		}
+	},
+	"version": 1
+}

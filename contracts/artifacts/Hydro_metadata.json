@@ -1,0 +1,89 @@
+{
+	"compiler": {
+		"version": "0.7.4+commit.3f05b770"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_seller",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountKWH",
+						"type": "uint256"
+					}
+				],
+				"name": "buyPower",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "synchronizePowerPhases",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Hydro ",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"synchronizePowerPhases()": {
+					"notice": "Three phase power has 3 sin waves space 120 degrees appart that ossiclate at 60hz in the US. In order to synchronize the hydro electric turbine with the rest of the grid the owner of the turbine needs to be able adjust the phases to match the 60hz of the grid, by adjusting the angle of stator relative to the turbines magnets."
+				}
+			},
+			"notice": "Smart contract that handles the pricing and sale of Hydro electricity",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/contracts/Hydro.sol": "Hydro"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/contracts/Hydro.sol": {
+			"keccak256": "0xfa4fe6784759a88f9653e44fe6568d3e83c67a05698bd0d39dd0f65d8ab1153f",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://cd67dacba8182a3adad21ed06c3d39a38d775af56e7eb80a51b19b4c3a6aa6fa",
+				"dweb:/ipfs/QmX83Wfj5h7JLE7B4u3HXmbJsJgdtuiB8ckonVw46UeSsP"
+			]
+		}
+	},
+	"version": 1
+}
