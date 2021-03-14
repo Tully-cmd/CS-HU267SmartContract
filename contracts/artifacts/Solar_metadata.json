@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.7.4+commit.3f05b770"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "payable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountKWH",
+						"type": "uint256"
+					}
+				],
+				"name": "buyPower",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/contracts/Solar.sol": "Solar"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/contracts/Solar.sol": {
+			"keccak256": "0xd572a1ec7e08d81c4cbf8d368ab64549b1db3e20e06fd0e5d99cea13679110fb",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d81d249dafa28145b1974545eb9f4f7466e3530f2497e3677ef1ce7462428014",
+				"dweb:/ipfs/QmXQq3xRGb8Xchi9MEwS8por8UqQu4E3KQ5LFAYFSyGrY4"
+			]
+		}
+	},
+	"version": 1
+}
